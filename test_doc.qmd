@@ -1,27 +1,34 @@
 ---
 title: "test doc for 9 am"
 author: "Bella Kormos"
+date: "2026-02-20"
 format: html
 editor: visual
 ---
 
-## Quarto
-
-Quarto enables you to weave together content and executable code into a finished document. To learn more about Quarto see <https://quarto.org>.
-
-## Running Code
-
-When you click the **Render** button a document will be generated that includes both content and the output of embedded code. You can embed code like this:
+# Set up 
 
 ```{r}
-1 + 1
+#| label: packages and data
+
+library(tidyverse) # general use package
+library(lterdatasampler) # package of datasets
+
+
+data(pie_crab) # crab size dataset
 ```
 
-You can add options to executable code like this
+# Exploratory data visualization
 
 ```{r}
-#| echo: false
-2 * 2
+#| label: latitude and size plot
+#| message: false
+
+# base layer: gggplot
+ggplot(data = pie_crab, # dataset
+       aes(x = latitude, # x-axis should be latitude, y-axis is crab size
+           y = size)) + 
+  # first layer: points to represent individual crabs 
+    geom_point()
 ```
 
-The `echo: false` option disables the printing of code (only output is displayed).
