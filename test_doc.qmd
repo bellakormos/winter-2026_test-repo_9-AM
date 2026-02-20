@@ -32,9 +32,9 @@ ggplot(data = pie_crab, # dataset
            y = size,
            color = site)) + 
   # first layer: points to represent individual crabs 
-    geom_point()
+    geom_point() +
     # changing colors ot be different from default
-    scale_color_manual(
+    scale_color_manual( 
       values = natparks.pals("Arches", n = 13, type = "continuous")
     ) + 
       # adding theme 
