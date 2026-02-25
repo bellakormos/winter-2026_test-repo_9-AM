@@ -38,6 +38,6 @@ ggplot(data = pie_crab, # dataset
       values = natparks.pals("Arches", n = 13, type = "continuous")
     ) + 
       # adding theme 
-      theme_minimal()
+      theme_light()
 ```
 
